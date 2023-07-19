@@ -14,6 +14,7 @@ class SecondActivity : AppCompatActivity(){
         val key_number = intent.extras?.getInt("key_number") ?: -1
         val textView = findViewById<TextView>(R.id.textView)
         val key_string = intent.extras?.getString("key_string") ?: ""
-        textView.text = "$key_string \n  ${key_number.toString()}"
+        val person = intent.extras?.getParcelable("person") ?:Person("","",0,"")
+        textView.text = "$key_string \n  ${key_number.toString()}\n $person"
     }
 }
